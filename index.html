@@ -4,130 +4,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<title>ELITE MOTORS | الدراجات الرياضية</title>
+<title>ELITE MOTORS | عالم الدراجات الرياضية</title>
+<meta name="description" content="اكتشف الدراجات النارية الرياضية وقارن الأسعار والمواصفات في ELITE MOTORS">
 <style>
+:root{--gold:#f8bd40;--bg:#090909;--panel:#171717;--muted:#bcbcbc}
 *{box-sizing:border-box}
-body{margin:0;background:#090909;color:#fff;font-family:Arial,Tahoma,sans-serif;line-height:1.7}
-header{padding:16px 5%;background:#141414;border-bottom:1px solid #f5bd42;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.logo{font-size:23px;font-weight:900;color:#f5bd42}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-a{color:inherit;text-decoration:none}
-nav a:hover{color:#f5bd42}
-button{font:inherit;cursor:pointer;border-radius:7px;padding:10px 14px;font-weight:bold}
-.gold{background:#f5bd42;color:#111;border:0}
-.dark{background:#252525;color:#fff;border:1px solid #555}
-.hero{padding:65px 6%;min-height:340px;background:linear-gradient(90deg,#090909ed,#09090970),url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1400&q=85') center/cover}
-.hero h1{font-size:clamp(34px,7vw,56px);line-height:1.25;color:#f5bd42}
-.hero p{max-width:550px}
-section{padding:32px 5%}
-h2{margin:0 0 6px}
-.muted{color:#aaa}
-.filters{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin:20px 0}
-input,select,textarea{width:100%;padding:12px;border-radius:7px;border:1px solid #444;background:#191919;color:#fff;font:inherit}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.card{background:#171717;border:1px solid #303030;border-radius:12px;overflow:hidden}
-.card:hover{border-color:#f5bd42}
-.card img{width:100%;height:200px;object-fit:cover;background:#242424;display:block}
-.content{padding:14px}
-.brand{color:#f5bd42;font-size:13px;font-weight:bold}
-.price{color:#f5bd42;font-size:20px;font-weight:bold;margin:8px 0}
-.specs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:12px 0;font-size:13px}
-.specs div,#detailSpecs div{background:#252525;padding:8px;border-radius:5px}
-.actions{display:flex;gap:7px}
-.actions button{flex:1;font-size:13px;padding:9px 4px}
-.empty{text-align:center;padding:30px;color:#ccc;grid-column:1/-1}
-.notice{border:1px solid #51421f;padding:12px;border-radius:8px;color:#e9d49d;font-size:13px;margin-top:20px}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.info{padding:17px;background:#171717;border:1px solid #333;border-radius:8px}
-.info h3{color:#f5bd42}
-.form{max-width:650px;display:grid;gap:12px}
-.form label{display:grid;gap:5px}
-footer{text-align:center;padding:25px;background:#141414;color:#aaa}
-footer strong{color:#f5bd42}
-.modal{display:none;position:fixed;inset:0;z-index:5;background:#000d;padding:15px;overflow:auto;align-items:center;justify-content:center}
-.modal.show{display:flex}
-.modalbox{background:#171717;border:1px solid #f5bd42;border-radius:12px;padding:18px;width:100%;max-width:600px;max-height:92vh;overflow:auto}
-.modalhead{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.modalbox img{width:100%;height:230px;object-fit:cover;border-radius:7px}
-#detailSpecs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){header{justify-content:center}.logo{width:100%;text-align:center}nav{justify-content:center;font-size:13px;gap:12px}.grid{grid-template-columns:1fr}.card img{height:230px}.filters,.about{grid-template-columns:1fr}.hero{padding:45px 5%}section{padding:27px 4%}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:white;font-family:Arial,Tahoma,sans-serif}
+header{background:#101010;border-bottom:2px solid var(--gold);padding:18px 5%;position:sticky;top:0;z-index:10}
+nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{color:var(--gold);font-size:27px;font-weight:900}
+nav a{color:white;text-decoration:none;margin:5px 8px}
+nav a:hover{color:var(--gold)}
+.hero{min-height:520px;padding:75px 7%;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{max-width:680px}
+.tag{color:var(--gold);font-size:19px}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.4;margin:20px 0}
+p{line-height:1.9}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:14px 22px;border:0;border-radius:9px;font-weight:bold;text-decoration:none;cursor:pointer;font-size:16px}
+section{max-width:1200px;margin:auto;padding:55px 20px}
+.section-title{font-size:32px;margin:0 0 12px}
+.muted{color:var(--muted)}
+.searchbox{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:25px 0}
+input,select,textarea{width:100%;padding:15px;background:#1c1c1c;border:1px solid #444;border-radius:9px;color:white;font-size:16px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid #303030;border-radius:14px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card img{width:100%;height:210px;object-fit:cover;background:#292929;display:block}
+.card-body{padding:18px}
+.card h3{font-size:23px;margin:5px 0 12px}
+.price{color:var(--gold);font-size:21px;font-weight:bold}
+.specs{color:#ccc;font-size:14px;line-height:2}
+.card .btn{width:100%;text-align:center;margin-top:12px}
+.badge{color:var(--gold);font-size:13px}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.info{padding:24px;background:var(--panel);border-radius:12px;border:1px solid #333}
+#contact{background:#111;max-width:none}
+#contact>div{max-width:850px;margin:auto}
+form{display:grid;gap:13px}
+footer{text-align:center;padding:25px;background:#050505;color:#aaa}
+@media(max-width:600px){header{position:relative}.logo{font-size:23px}nav{justify-content:center}nav>div:last-child{text-align:center}.hero{min-height:470px;padding:50px 22px}.searchbox{grid-template-columns:1fr}section{padding:40px 15px}}
 </style>
 </head>
 <body>
+
 <header>
-<a class="logo" href="#home">ELITE MOTORS 🏍️</a>
 <nav>
+<div class="logo">🏍️ ELITE MOTORS</div>
+<div>
 <a href="#home">الرئيسية</a>
 <a href="#bikes">الدراجات</a>
 <a href="#about">معلوماتنا</a>
 <a href="#contact">استفسار</a>
+</div>
 </nav>
 </header>
 
-<section class="hero" id="home">
-<div style="max-width:650px">
-<div style="color:#f5bd42">⚡ عالم السرعة والقوة</div>
+<main>
+<div class="hero" id="home">
+<div class="hero-content">
+<div class="tag">⚡ عالم السرعة والقوة</div>
 <h1>اكتشف دراجتك الرياضية المثالية</h1>
 <p>مرحبا بيك في ELITE MOTORS. اكتشف أشهر الدراجات الرياضية، قارن المواصفات والأسعار واختار الموديل اللي يعجبك.</p>
-<a href="#bikes"><button class="gold">اكتشف الدراجات ←</button></a>
+<a class="btn" href="#bikes">اكتشف الدراجات ←</a>
 </div>
-</section>
+</div>
 
 <section id="bikes">
-<h2>🏁 الدراجات الرياضية</h2>
+<h2 class="section-title">🏁 الدراجات الرياضية</h2>
 <p class="muted">فتّش باسم الدراجة أو اختار الماركة.</p>
-<div class="filters">
-<input id="search" type="search" placeholder="🔎 Kawasaki Z1000، BMW، Yamaha...">
-<select id="brand">
+
+<div class="searchbox">
+<input id="search" type="search" placeholder="🔎 Kawasaki Z1000، BMW، Yamaha..." oninput="renderBikes()">
+<select id="brand" onchange="renderBikes()">
 <option value="">كل الماركات</option>
-<option>Kawasaki</option><option>Yamaha</option>
-<option>Honda</option><option>BMW</option>
-<option>Ducati</option><option>Suzuki</option>
+<option>Kawasaki</option>
+<option>BMW</option>
+<option>Yamaha</option>
+<option>Honda</option>
+<option>Suzuki</option>
 </select>
 </div>
-<div class="grid" id="grid"></div>
-<div class="notice">⚠️ الأسعار تقديرية للتعريف فقط وليست عروض بيع مؤكدة. تختلف الأسعار حسب سنة الصنع والحالة والسوق التونسية. المواصفات تقريبية حسب الإصدار. الصور الخارجية قد تتغير روابطها.</div>
+
+<div class="grid" id="bike-list"></div>
+<p id="empty" style="display:none;text-align:center">ما لقيناش دراجة بالاسم هذا. جرّب كلمة أخرى.</p>
 </section>
 
 <section id="about">
-<h2>⭐ علاش ELITE MOTORS؟</h2>
-<p class="muted">معلومات الدراجات في بلاصة واحدة.</p>
-<div class="about">
-<div class="info"><h3>🔎 بحث سريع</h3><p>لوّج على الماركة والموديل.</p></div>
-<div class="info"><h3>⚙️ المواصفات</h3><p>شوف سعة المحرك والقوة ونوع الدراجة.</p></div>
-<div class="info"><h3>💰 الأسعار</h3><p>قارن الأسعار التقديرية بالدينار التونسي.</p></div>
-<div class="info"><h3>📩 استفسار</h3><p>حضّر سؤال على الدراجة اللي تهمك.</p></div>
+<h2 class="section-title">⭐ علاش ELITE MOTORS؟</h2>
+<div class="info-grid">
+<div class="info"><h3>🏍️ موديلات متنوعة</h3><p class="muted">اكتشف أشهر الماركات والدراجات الرياضية.</p></div>
+<div class="info"><h3>💰 مقارنة الأسعار</h3><p class="muted">الأسعار المعروضة تقديرية وقابلة للتعديل حسب السوق وحالة الدراجة.</p></div>
+<div class="info"><h3>📋 مواصفات واضحة</h3><p class="muted">اطّلع على معلومات المحرك والقوة والسعة.</p></div>
+<div class="info"><h3>📞 استفسار مباشر</h3><p class="muted">ابعث استفسار على الدراجة اللي تهمّك.</p></div>
 </div>
 </section>
 
 <section id="contact">
-<h2>📩 استفسر على دراجة</h2>
-<p class="muted">عمّر الاستمارة لتحضير رسالة تنجم تنسخها وتبعثها.</p>
-<form class="form" id="form">
-<label>اسمك<input id="person" required maxlength="80" placeholder="اسمك"></label>
-<label>رقم الهاتف<input id="phone" required type="tel" maxlength="30" placeholder="رقم الهاتف"></label>
-<label>الموديل<select id="choice" required><option value="">اختار دراجة</option></select></label>
-<label>سؤالك<textarea id="message" rows="4" required placeholder="اكتب استفسارك"></textarea></label>
-<button class="gold" type="submit">حضّر الاستفسار</button>
+<div>
+<h2 class="section-title">📩 استفسر على دراجة</h2>
+<p class="muted">عمّر المعلومات واضغط على الزر باش تبعث استفسارك عبر WhatsApp.</p>
+<form id="contact-form">
+<input id="customer" placeholder="اسمك" required>
+<input id="phone" type="tel" placeholder="رقم هاتفك" required>
+<select id="model">
+<option value="">اختار الدراجة اللي تهمّك</option>
+</select>
+<textarea id="message" rows="4" placeholder="اكتب استفسارك هنا..."></textarea>
+<button class="btn" type="submit">ابعث الاستفسار عبر WhatsApp</button>
 </form>
-<p id="result" style="white-space:pre-wrap"></p>
-<p class="muted">الاستمارة لا ترسل الرسالة وحدها؛ يلزمك تنسخ النص وتبعثه بنفسك.</p>
+<p class="muted">ملاحظة: يلزمك تحط رقم WhatsApp متاعك في الكود قبل استقبال الاستفسارات.</p>
+</div>
 </section>
+</main>
 
-<footer><strong>ELITE MOTORS 🏍️</strong><p>عالم الدراجات الرياضية</p><p>© 2026</p></footer>
-
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-<div class="modalbox">
-<div class="modalhead"><h2 id="detailTitle"></h2><button class="dark" id="close">✕</button></div>
-<img id="detailImg" alt="صورة الدراجة">
-<p id="detailDesc"></p>
-<div class="price" id="detailPrice"></div>
-<div id="detailSpecs"></div>
-<p class="muted">المعلومات والأسعار تقديرية.</p>
-<button class="gold" id="ask">استفسر على الدراجة</button>
-</div>
-</div>
+<footer>
+<p>🏍️ ELITE MOTORS</p>
+<p>© 2026 ELITE MOTORS — جميع الحقوق محفوظة</p>
+</footer>
 
 <script>
+const bikes = [
+{
+brand:"Kawasaki", name:"Kawasaki Z1000",
+engine:"1043 cc", power:"142 حصان تقريباً",
+type:"Naked Sport", tnd:32000, eur:9500,
+image:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+description:"دراجة رياضية من فئة Naked، بمحرك قوي وتصميم هجومي."
+},
+{
+brand:"Kawasaki", name:"Kawasaki Z750",
+engine:"748 cc", power:"106 حصان تقريباً",
+type:"Naked Sport", tnd:15000, eur:4500,
+image:"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85",
+description:"دراجة متوسطة السعة معروفة بطابعها الرياضي."
+},
+{
+brand:"Kawasaki", name:"Kawasaki Z800",
+engine:"806 cc", power:"113 حصان تقريباً",
+type:"Naked Sport", tnd:22000, eur:6500,
+image:"https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85",
+description:"تصميم هجومي وأداء رياضي مناسب لمحبي فئة Z."
+},
+{
+brand:"Kawasaki", name:"Kawasaki Ninja ZX-10R",
+engine:"998 cc", power:"203 حصان تقريباً",
+type:"Superbike", tnd:52000, eur:15500,
+image:"https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?auto=format&fit=crop&w=900&q=85",
+description:"دراجة Superbike موجهة للأداء الرياضي العالي."
+},
+{
+brand:"BMW", name:"BMW S 1000 RR",
+engine:"999 cc", power:"210 حصان تقريباً",
+type:"Superbike", tnd:65000, eur:19500,
+image:"https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=85",
+description:"دراجة رياضية فائقة الأداء بتكنولوجيا متقدمة."
+},
+{
+brand:"Yamaha", name:"Yamaha YZF-R1",
+engine:"998 cc", power:"200 حصان تقريباً",
+type:"Superbike", tnd:55000, eur:16500,
+image:"https://images.unsplash.com/photo-1558980394-0c9d5f7e6c8a?auto=format&fit=crop&w=900&q=85",
+description:"دراجة رياضية بمحرك قوي وتصميم مستوحى من السباقات."
+},
+{
+brand:"Honda", name:"Honda CBR1000RR",
+engine:"1000 cc تقريباً", power:"القوة تختلف حسب السنة",
+type:"Superbike", tnd:48000, eur:14500,
+image:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85&sat=-30",
+description:"من أشهر الدراجات الرياضية من هوندا."
+},
+{
+brand:"Suzuki", name:"Suzuki GSX-R1000",
+engine:"999 cc", power:"القوة تختلف حسب السنة",
+type:"Superbike", tnd:42000, eur:12500,
+image:"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=85&sat=-50",
+description:"دراجة رياضية قوية من عائلة GSX-R."
+}
+];
+
+const money = n => new Intl.NumberFormat("fr-TN").format(n);
+
+function renderBikes(){
+const q=document.getElementById("search").value.trim().toLowerCase();
+const brand=document.getElementById("brand").value;
+const results=bikes.filter(b=>
+(b.name+" "+b.brand+" "+b.type).toLowerCase().includes(q) &&
+(!brand || b.brand===brand)
+);
+document.getElementById("empty").style.display=results.length?"none":"block";
+document.getElementById("bike-list").innerHTML=results.map(b=>`
+<article class="card">
+<img src="${b.image}" alt="${b.name}" loading="lazy">
+<div class="card-body">
+<div class="badge">${b.brand} · ${b.type}</div>
+<h3>${b.name}</h3>
+<p class="specs">⚙️ المحرك: ${b.engine}<br>🏁 القوة: ${b.power}</p>
+<p class="price">${money(b.tnd)} TND</p>
+<p class="muted">حوالي ${money(b.eur)} EUR</p>
+<p class="muted">${b.description}</p>
+<button class="btn" onclick="askAbout('${b.name}')">استفسر على الدراجة</button>
+</div>
+</article>`).join("");
+}
+
+function askAbout(name){
+document.getElementById("model").value=name;
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+const modelSelect=document.getElementById("model");
+bikes.forEach(b=>{
+const opt=document.createElement("option");
+opt.value=b.name;
+opt.textContent=b.name;
+modelSelect.appendChild(opt);
+});
+
+document.getElementById("contact-form").addEventListener("submit",function(e){
+e.preventDefault();
+const customer=document.getElementById("customer").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const model=document.getElementById("model").value;
+const message=document.getElementById("message").value.trim();
+const whatsapp="21600000000";
+const text=`السلام عليكم ELITE MOTORS\nالاسم: ${customer}\nالهاتف: ${phone}\nالدراجة: ${model||"استفسار عام"}\nالاستفسار: ${message}`;
+if(whatsapp==="21600000000"){
+alert("قبل الاستعمال، بدّل 21600000000 برقم WhatsApp متاع المحل في الكود.");
+return;
+}
+window.open("https://wa.me/"+whatsapp+"?text="+encodeURIComponent(text),"_blank");
+});
+
+renderBikes();
+</script>
+</body>
+</html>
